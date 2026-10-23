@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07101f">
+  <title>VotoLab — Simulação de votação</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-red"></div><div class="ambient ambient-blue"></div>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="VotoLab, início"><span class="brand-mark">V</span><span>voto<span class="brand-light">lab</span><small>SIMULAÇÃO INTERATIVA</small></span></a>
+    <div class="demo-badge"><span class="live-dot"></span> AMBIENTE DE DEMONSTRAÇÃO</div>
+    <button class="sound-toggle" id="soundToggle" aria-pressed="true"><span class="sound-icon">♫</span><span class="sound-label">Som ligado</span></button>
+  </header>
+
+  <main id="top">
+    <section class="intro">
+      <div class="eyebrow"><span></span> ELEIÇÃO SIMULADA · 2 CANDIDATOS</div>
+      <h1>Seu voto. Sua <span>simulação.</span></h1>
+      <p>Escolha uma urna, digite o número do candidato e confirme seu voto.</p>
+      <div class="notice"><span class="notice-icon">ⓘ</span> Demonstração recreativa. Não é uma votação oficial e não tem valor eleitoral.</div>
+    </section>
+
+    <section class="scoreboard" aria-label="Resultado da simulação">
+      <div class="score-side score-left"><span class="score-caption">VOTOS SIMULADOS</span><strong id="total13">000</strong><span class="score-name">Candidato 13</span></div>
+      <div class="score-center"><span class="score-label">PLACAR DA SIMULAÇÃO</span><div class="score-total"><b id="grandTotal">0</b><span>votos</span></div><span class="score-foot">nesta sessão</span></div>
+      <div class="score-side score-right"><span class="score-caption">VOTOS SIMULADOS</span><strong id="total22">000</strong><span class="score-name">Candidato 22</span></div>
+      <div class="score-bar"><span id="bar13"></span><span id="bar22"></span></div>
+    </section>
+
+    <section class="booths" aria-label="Urnas de votação">
+      <article class="booth booth-red" data-candidate="13">
+        <div class="booth-heading"><div class="booth-icon">01</div><div><div class="booth-kicker">URNA 01 <i></i> VERMELHA</div><h2>Vote no <span>13</span></h2></div><span class="booth-tag">SIMULAÇÃO</span></div>
+        <div class="candidate-card">
+          <div class="portrait-wrap"><img src="assets/lula.png" alt="Retrato de Luiz Inácio Lula da Silva"><span class="portrait-shine"></span><span class="candidate-number">13</span></div>
+          <div class="candidate-meta"><span class="candidate-role">PRESIDENTE</span><h3>Luiz Inácio<br>Lula da Silva</h3><span class="party-pill"><i></i> PARTIDO DOS TRABALHADORES</span><div class="gift-vote" aria-label="Envie uma rosa: vale um voto para Lula"><img src="assets/rosa.gif" alt="Rosa"><span><b>1 ROSA</b><small>= 1 voto no Lula</small></span></div></div>
+        </div>
+        <div class="machine">
+          <div class="machine-display"><div class="display-top"><span>VOTOLAB · URNA SIMULADA</span><span class="mini-status"><i></i> PRONTA</span></div><div class="screen-content" aria-live="polite"><span class="typed-number" data-display>_ _</span><span class="display-help" data-message>Digite o número do candidato</span><div class="screen-candidate" data-screen-candidate><img src="assets/lula.png" alt=""><span>LUIZ INÁCIO LULA DA SILVA</span></div></div><div class="display-bottom"><span>SIMULAÇÃO</span><span>SEÇÃO 0001</span></div></div>
+          <div class="key-panel"><div class="keypad" data-keypad></div><div class="machine-actions"><button class="key-action white-key" data-action="blank"><i></i> BRANCO</button><button class="key-action orange-key" data-action="clear"><i></i> CORRIGE</button><button class="key-action green-key" data-action="confirm"><i></i> CONFIRMA</button></div><div class="hand-cursor" aria-hidden="true">👆</div></div>
+        </div>
+        <div class="booth-footer"><span><i class="security-icon">◈</i> VOTO ANÔNIMO NESTA SESSÃO</span><span data-vote-count>0 votos</span></div>
+      </article>
+
+      <article class="booth booth-blue" data-candidate="22">
+        <div class="booth-heading"><div class="booth-icon">02</div><div><div class="booth-kicker">URNA 02 <i></i> AZUL</div><h2>Vote no <span>22</span></h2></div><span class="booth-tag">SIMULAÇÃO</span></div>
+        <div class="candidate-card">
+          <div class="portrait-wrap"><img src="https://legis.senado.leg.br/senadores/fotos-oficiais/5894" alt="Retrato de Flávio Bolsonaro" referrerpolicy="no-referrer"><span class="portrait-shine"></span><span class="candidate-number">22</span></div>
+          <div class="candidate-meta"><span class="candidate-role">CANDIDATO 22</span><h3>Flávio<br>Bolsonaro</h3><span class="party-pill"><i></i> SIMULAÇÃO</span><div class="gift-vote" aria-label="Envie um presente TikTok: vale um voto para Flávio"><img src="assets/tiktok.png" alt="Presente TikTok"><span><b>1 TIKTOK</b><small>= 1 voto no Flávio</small></span></div></div>
+        </div>
+        <div class="machine">
+          <div class="machine-display"><div class="display-top"><span>VOTOLAB · URNA SIMULADA</span><span class="mini-status"><i></i> PRONTA</span></div><div class="screen-content" aria-live="polite"><span class="typed-number" data-display>_ _</span><span class="display-help" data-message>Digite o número do candidato</span><div class="screen-candidate" data-screen-candidate><img src="https://legis.senado.leg.br/senadores/fotos-oficiais/5894" alt="" referrerpolicy="no-referrer"><span>FLÁVIO BOLSONARO</span></div></div><div class="display-bottom"><span>SIMULAÇÃO</span><span>SEÇÃO 0001</span></div></div>
+          <div class="key-panel"><div class="keypad" data-keypad></div><div class="machine-actions"><button class="key-action white-key" data-action="blank"><i></i> BRANCO</button><button class="key-action orange-key" data-action="clear"><i></i> CORRIGE</button><button class="key-action green-key" data-action="confirm"><i></i> CONFIRMA</button></div><div class="hand-cursor" aria-hidden="true">👆</div></div>
+        </div>
+        <div class="booth-footer"><span><i class="security-icon">◈</i> VOTO ANÔNIMO NESTA SESSÃO</span><span data-vote-count>0 votos</span></div>
+      </article>
+    </section>
+
+    <section class="howto"><div class="howto-title"><span class="eyebrow">COMO FUNCIONA</span><span class="howto-line"></span></div><div class="steps"><div class="step"><span class="step-no">01</span><span class="step-icon">⌁</span><div><b>Escolha uma urna</b><small>Clique nos números da urna desejada</small></div></div><div class="step"><span class="step-no">02</span><span class="step-icon">⌗</span><div><b>Digite 13 ou 22</b><small>A foto do candidato aparece na tela</small></div></div><div class="step"><span class="step-no">03</span><span class="step-icon">✓</span><div><b>Confirme seu voto</b><small>Ouça o som da urna e veja o placar</small></div></div></div></section>
+  </main>
+  <footer class="site-footer"><span class="brand-mark small">V</span><span>VotoLab <i>·</i> uma experiência interativa</span><span class="footer-disclaimer">VOTAÇÃO FICTÍCIA · DADOS APENAS NESTE NAVEGADOR</span></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"><span>✓</span><div><b>Voto confirmado!</b><small>Obrigado por participar da simulação.</small></div></div>
+  <script src="script.js"></script>
+</body>
+</html>
